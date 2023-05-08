@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <title>Fetch API Example</title>
+    <meta charset="utf-8" />
+    <title>방 생성/삭제 예제</title>
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
-    <h1>Fetch API Example</h1>
-    <input type="text" id="inputData" placeholder="Type your message" />
-    <button id="submitButton">Submit</button>
-    <div id="outputData"></div>
+    <h1>방 생성/삭제 예제</h1>
+    <button id="createRoomModalBtn">방 생성</button>
 
-    <script src="/javascripts/client.js"></script>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>방 이름을 입력하세요:</p>
+        <input type="text" id="roomNameInput" />
+        <button id="createRoomBtn">방 생성</button>
+      </div>
+    </div>
+    <script src="/javascript/client.js"></script>
   </body>
 </html>
