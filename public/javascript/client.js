@@ -1,6 +1,8 @@
 const roomModal = document.getElementById("room-modal");
 const roomModalClose = document.getElementById("room-modal-close");
 
+const inputRoomName = document.getElementById("room-name");
+
 var createBtn = document.getElementById("create-room");
 
 createBtn.addEventListener("click", createRoomModal);
@@ -11,6 +13,7 @@ function createRoomModal() {
 
 roomModalClose.onclick = function () {
   roomModal.style.display = "none"; // 모달창 닫기
+  inputRoomName.value = "";
 };
 
 var deleteBtn = document.getElementById("delete-room");
@@ -26,6 +29,7 @@ function createRoom() {
   // 방 생성 기능
   alert(`새로운 ${roomName} 방을 생성합니다.`);
   roomModal.style.display = "none"; // 모달창 닫기
+  inputRoomName.value = "";
 }
 
 function deleteRoom() {
