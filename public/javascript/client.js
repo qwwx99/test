@@ -1,40 +1,34 @@
-const modal = document.getElementById("myModal");
-const btn = document.getElementById("createRoomModalBtn");
-const span = document.getElementsByClassName("close")[0];
+const roomModal = document.getElementById("room-modal");
+const roomModalClose = document.getElementById("room-modal-close");
 
-btn.onclick = function () {
-  modal.style.display = "block";
+var createBtn = document.getElementById("create-room");
+
+createBtn.addEventListener("click", createRoomModal);
+
+function createRoomModal() {
+  roomModal.style.display = "block"; // 모달창 띄우기
+}
+
+roomModalClose.onclick = function () {
+  roomModal.style.display = "none"; // 모달창 닫기
 };
 
-span.onclick = function () {
-  modal.style.display = "none";
-};
+var deleteBtn = document.getElementById("delete-room");
 
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
+deleteBtn.addEventListener("click", deleteRoom);
 
-const createRoomBtn = document.getElementById("createRoomBtn");
+const roomCreateButton = document.getElementById("room-create-button");
 
-createRoomBtn.addEventListener("click", () => {
-  const roomName = document.getElementById("roomNameInput").value;
-  fetch("/createRoom", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ roomName }),
-  })
-    .then((response) => {
-      if (response.ok) {
-        console.log("방이 생성되었습니다.");
-      } else {
-        console.error("서버 오류 발생");
-      }
-    })
-    .catch((error) => {
-      console.error(error);
-    });
-});
+roomCreateButton.addEventListener("click", createRoom);
+
+function createRoom() {
+  const roomName = document.getElementById("room-name").value;
+  // 방 생성 기능
+  alert(`새로운 ${roomName} 방을 생성합니다.`);
+  roomModal.style.display = "none"; // 모달창 닫기
+}
+
+function deleteRoom() {
+  // 방 삭제 기능
+  alert("선택한 방을 삭제합니다.");
+}
