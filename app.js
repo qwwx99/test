@@ -18,6 +18,10 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/views/index.html");
 });
 
+app.get("/room", (req, res) => {
+  res.sendFile(__dirname + "/views/room.html");
+});
+
 var port = 3000;
 
 server.listen(port, () => {

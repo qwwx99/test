@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>방 생성/삭제 예제</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <h1>방 생성/삭제 예제</h1>
+    <button id="create-room">방 생성</button>
+    <button id="delete-room">방 삭제</button>
+
+    <div id="room-modal">
+      <div id="room-modal-content">
+        <span id="room-modal-close">X</span>
+        <h2>방 생성</h2>
+        <input
+          type="text"
+          name="room-name"
+          id="room-name"
+          placeholder="방 이름을 입력하세요"
+        />
+        <button id="room-create-button">생성</button>
+      </div>
+    </div>
+
+    <script src="/javascript/client.js"></script>
+  </body>
+</html>
